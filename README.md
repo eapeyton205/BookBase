@@ -8,8 +8,20 @@ A smart web application for managing your to-be-read (TBR) list with intelligent
 - **Series Tracking** - Automatically tracks book series and their reading order
 - **Smart Suggestions** - Get random book recommendations that respect series order (no spoilers!)
 - **Reading History** - Keep track of books you've completed
+- **Statistics** - View breakdowns of your reading by genre and author
 - **Easy Editing** - Update book details or fix mistakes anytime
 - **Flexible Workflow** - Mark books as read/unread as needed
+
+## Microservices Architecture
+
+BookBase uses four microservices that communicate via text files:
+
+| Microservice | Type | Description |
+|--------------|------|-------------|
+| **RNG Service** | Small Pool | Random book selection for suggestions |
+| **Text Formatter** | Big Pool | Formats book titles to proper title case |
+| **Data Counter** | Big Pool | Counts books by genre and author for statistics |
+| **Words Service** | Big Pool | Analyzes common words in book titles |
 
 ## Installation
 
@@ -21,7 +33,7 @@ A smart web application for managing your to-be-read (TBR) list with intelligent
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/eapeyton205/BookBase.git
+git clone https://github.com/eapeyton205/bookbase.git
 cd bookbase
 ```
 
@@ -30,8 +42,24 @@ cd bookbase
 pip install -r requirements.txt
 ```
 
-3. Run the app:
+## Running the Application
+
+Start each microservice in a separate terminal:
+
 ```bash
+# Terminal 1
+python rng_service.py
+
+# Terminal 2
+python text_formatter.py
+
+# Terminal 3
+python data_counter.py
+
+# Terminal 4
+python words_service.py
+
+# Terminal 5
 streamlit run bookbase.py
 ```
 
@@ -59,6 +87,10 @@ The app will open in your default browser at `http://localhost:8501`
 ### Reading History
 - View completed books in the "Reading History" tab
 - Click "Unread" to move a book back to your TBR list
+
+### Statistics
+- View genre and author breakdowns in the "Statistics" tab
+- Analyze common words in your book titles
 
 ## How It Works
 
@@ -96,3 +128,5 @@ Elizabeth Peyton
 ## Acknowledgments
 
 - Built with [Streamlit](https://streamlit.io/)
+- RNG Service co-written with Lenin Soto-Hernandez
+- Words Service by Silas Jones

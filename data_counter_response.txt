@@ -1,0 +1,11 @@
+{
+  "success": true,
+  "total_count": 7,
+  "unique_count": 3,
+  "item_counts": {
+    "J.R.R. Tolkien": 3,
+    "James Joyce": 1,
+    "Holly Black": 3
+  },
+  "error": ""
+}
