@@ -21,7 +21,7 @@ A smart web application for managing your to-be-read (TBR) list with intelligent
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/eapeyton205/CS361_Main.git
+git clone https://github.com/eapeyton205/BookBase.git
 cd bookbase
 ```
 
@@ -91,7 +91,7 @@ This project is open source and available under the MIT License.
 
 ## Author
 
-Created as part of Oregon State University's CS361 Software Engineering course.
+Elizabeth Peyton
 
 ## Acknowledgments
 
